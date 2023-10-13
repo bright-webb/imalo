@@ -1,0 +1,142 @@
+$primary: #c84f45;
+
+/* Centered hero content */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 0; 
+}
+
+
+.position-relative {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  top: -25px;
+}
+
+.search-bar {
+  text-align: center;
+
+}
+
+.search-bar .search-with-addon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-bar input {
+  width: 500px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.search-bar i {
+  display: flex;
+  align-items: center;
+}
+
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.input-search {
+  width: 500px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.input-icon i {
+  color: $primary;
+  position: absolute;
+  right: 30px;
+  top: 40%;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+
+/* for smaller screens */
+@media (max-width: 768px) {
+  .search-bar {
+      text-align: center;
+
+      .search-with-addon {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      input {
+        width: 200px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+  }
+
+  h1.title{
+    font-size: 2em !important;
+  }
+
+      .app-icons{
+      display: none !important;
+      a{
+        display: block;
+        width: 100px !important;
+        margin-top: 20px;
+
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+.category-box{
+  display: block;
+  text-align: center;
+  font-weight: normal;
+  color: #333;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: 0.5s box-shadow;
+}
+
+.category-box:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.5s box-shadow;
+  border: none;
+  color: $primary;
+}
+
+.category-box i{
+  font-size: 18px;
+}
+
+
+.justify-content-between{
+  justify-content: space-between !important;
+}
+

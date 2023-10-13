@@ -1,0 +1,117 @@
+<section class="page-header">
+	<div class="content">
+		<h4>Sellers <br><span class="text-primary">Guides</span></h4>
+	</div>
+</section>
+
+<div class="container">
+		<div class="row d-flex justify-content-center">
+		<div class="col-md-10">
+			<div class="page-header-search ">
+				<div class="search-with-left-icon">
+					<i class="fa fa-search"></i>
+					<input type="search" class="drop-shadow" placeholder="Search guides, tips and insights">
+				</div>
+				<div class="search-tags">
+						<a href="#">Rental search</a>
+						<a href="#">Making it yours</a>
+						<a href="#">Rental protection</a>
+					</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+<section class="padding">
+	<div class="container">
+    <div class="row d-flex justify-content-start w-100 columns">
+      <div class="col-md-4">
+        <h2 class="text-bold">
+            What's new & <span class="text-primary">Trending</span>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="container">
+  	<div class="row gy-5 d-flex justify-content-center">
+  		<div class="col-md-8">
+			<div class="blog-item">
+				  <div class="blog-image">
+				  	<img [src]="currentblog.img" alt="Blog Image" class="blog-image">
+				  </div>
+				  <div class="blog-details">
+				    <div class="blog-meta">
+				      <p><small>{{ currentblog.date }}</small></p>
+				    </div>
+				    <h2 class="blog-title">{{ currentblog.title }}</h2>
+				    <p class="blog-description">{{ currentblog.description }}</p>
+				  </div>
+				</div>
+
+		</div>
+
+		<div class="col-md-4">
+			<div class="articles" *ngFor="let blog of blogs.slice(0, 2)">
+				<div class="no-image-card">
+					<div class="tags">
+						<a href="#">Rental Search</a>
+						<a href="#">Trending</a>
+					</div>
+					<div class="details">
+						<div class="meta">
+							<small>{{ blog.date }}</small>
+						</div>
+						<h4 class="blog-title">{{ blog.title }}</h4>
+						<p class="blog-description">{{ blog.description.substring(0, 50) }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</div>
+  </div>
+
+</section>
+
+<section class="padding">
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-4" *ngFor="let blog of blogs ">
+				<div class="blog-card">
+					<div class="blog-tag">
+						<a href="#">Rental search</a>
+					</div>
+					<div class="blog-image">
+						<img [src]="blog.img">
+					</div>
+					<div class="blog-content">
+						<div class="meta">
+						<small>{{ blog.date }}</small>
+						</div>
+						<div class="blog-title">
+							<a>{{ blog.title }}</a>
+						</div>
+						<div class="blog-description">
+							<p>{{ blog.description.substring(0, 100) }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="padding">
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="col-md-4">
+				<div class="text-center">
+					<button type="button" class="load-more">Load More</button>
+				</div>
+			</div>
+		</div>	
+	</div>
+</section>
+
+<section class="padding"></section>

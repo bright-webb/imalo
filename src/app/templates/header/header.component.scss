@@ -1,0 +1,77 @@
+
+.navbar-menu {
+    text-align: right;
+}
+
+.navbar-burger {
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.custom-menu-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  /* Make the mega menu finer */
+.navbar-dropdown.is-mega {
+  padding: 0rem;
+}
+
+
+.navbar-dropdown.is-mega {
+  text-align: left;
+}
+
+/* Style for mega menu sub-menu titles */
+.is-mega-menu-title {
+  font-weight: bold !important;
+}
+
+
+
+  .navbar-dropdown{
+    text-align: left !important;
+  }
+
+  .is-mega-menu-title {
+    font-weight: bold;
+  }
+  
+  .navbar-dropdown .navbar-item{
+    padding: 7px !important;
+  }
+
+  .navbar-dropdown .navbar-item.custom{
+    padding: 5px !important;
+  }
+
+  .navbar-dropdown .navbar-item:hover{
+    background: transparent !important;
+    text-decoration: underline;
+  }
+
+/* Make the mega menu right-aligned on mobile */
+@media screen and (max-width: 768px) {
+  .navbar-dropdown.is-mega {
+    float: right;
+    right: 0;
+  }
+
+  .navbar-burger {
+    float: right;
+  }
+
+  .is-mega-menu-title {
+    text-align: left !important;
+  }
+
+  .is-mega-menu-title{
+    display: none !important;
+  }
+
+  .is-flex-mobile-start{
+     justify-content: start !important;
+     text-align: left !important;
+    }
+}
+

@@ -1,0 +1,60 @@
+<app-page-header></app-page-header>
+<div class="container">
+		
+		<div class="row d-flex justify-content-center w-100">
+			<div class="col-md-8">
+				<div class="row">
+					<div *ngFor="let cardSet of propertyCards; let setIndex = index" class="col-md-6">
+				         <div class="col" *ngFor="let card of cardSet; let cardIndex = index"> <!-- Add cardIndex to keep track of the card in a set -->
+				      <div class="column">
+				        <div class="property-card">
+				          <div class="label">
+				            {{ card.propertyType }}
+				          </div>
+				          <div class="property-image-carousel">
+				            <div class="property-image-carousel">
+				              
+				              <div class="property-image">
+				                <button class="carousel-button prev" (click)="prevImage(setIndex, cardIndex)">❮</button> 
+				                <img [src]="card.images[card.currentIndex]" alt="Property Image" class="carousel-image">
+				                <button class="carousel-button next" (click)="nextImage(setIndex, cardIndex)">❯</button> 
+				                <div class="property-agent">
+				                  <a href="#">
+				                    <img src="/assets/images/agents/avatar.jpg">
+				                  </a>
+				                </div>
+				              </div>
+				              
+				            </div>
+				            <div class="carousel-dots">
+				              <span *ngFor="let image of card.images; let i = index" [class]="getDotClass(i, setIndex)" (click)="goToImage(i, setIndex)"></span> 
+				            </div>
+				          </div>
+				          
+				          <div class="details">
+				            <div class="property-name">
+				              <a href="details">{{ card.propertyName }} </a> 
+				            </div>
+				            <div class="property-price">
+				              <p>{{ card.propertyPrice }}</p> 
+				            </div>
+				          </div> 
+				          <div class="address">
+				            <p><i class="fa fa-map-marker"></i> {{ card.propertyAddress }}</p> 
+				          </div> 
+				        </div>
+				      </div>
+				    </div>
+        </div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<!-- Sidebar
+				================================================== -->
+				<app-sidebar></app-sidebar>
+				<!-- Sidebar / End -->
+			</div>
+		</div>
+
+</div>
