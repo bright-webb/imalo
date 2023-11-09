@@ -1,0 +1,35 @@
+<section class="padding padding-bottom">
+	<div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+        	<div class="col-md-6">
+        		<div class="text-center">
+		            <h4 class="text-success">Registration Successful</h4>
+		            <p>Congratulations! Your registration was successful.</p>
+		            <hr>
+		            <p><small>You need to verify your phone number to continue</small></p>
+		            <button type="button" class="button is-danger is-small"  [disabled]="isLoading" aria-label="close" (click)="openModal()">Verify your phone number</button>
+		        </div>
+        	</div>
+        </div>	
+    </div>
+</section>
+
+
+ <div class="modal" [class.is-active]="modalVisible">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Phone number verification</p>
+      
+    </header>
+    <section class="modal-card-body">
+      <p>
+      	Please enter the six digit code sent to {{user.phone}}
+      	<input type="number" class="form-control" [(ngModel)]="verificationCode" placeholder="0 0 0 0 0 0">
+      </p>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success" (click)="verify()" [disabled]="isLoading">Verify</button>
+    </footer>
+  </div>
+</div>

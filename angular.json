@@ -30,7 +30,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/styles.scss",
+  "node_modules/ngx-toastr/toastr.css" 
             ],
             "scripts": []
           },
@@ -105,6 +107,7 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/slick-carousel/slick/slick.min.js",
               "node_modules/jquery/dist/jquery.min.js",
+              "https://maps.googleapis.com/maps/api/js?key=AIzaSyBfaQXWnACXIcoP8kxYCJ71v3ugVjLEBDA&libraries=places"
 
             ]
           }

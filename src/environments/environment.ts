@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://api.example.com', // API base URL for production
-  // Add other production-specific configuration here
+  apiBaseUrl: 'https://api.imbapano.com/api',
+  googleAPIKey: 'AIzaSyBfaQXWnACXIcoP8kxYCJ71v3ugVjLEBDA'
 };

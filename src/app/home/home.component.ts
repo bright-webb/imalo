@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { CarouselService } from 'ngx-owl-carousel-o/lib/services/carousel.service';
-
+import { AuthGuardService } from '../services/auth-guard.service';
 
 @Component({
   selector: 'app-home',
@@ -12,141 +13,136 @@ import { CarouselService } from 'ngx-owl-carousel-o/lib/services/carousel.servic
 export class HomeComponent {
 
   propertyCards = [
-    [
-      {
-        currentIndex: 0,
-        images: [
+  [
+    {
+      currentIndex: 0,
+      images: [
         './assets/images/houses/house1.jpg',
         './assets/images/houses/house2.jpg',
         './assets/images/houses/house3.jpg',
         './assets/images/houses/house4.jpg',
       ],
-        propertyName: 'Meridan Villa',
-        propertyPrice: '$270,000',
-        propertyAddress: 'Cnr Lytton/Bristol R Workington',
-        propertyType: "For Rent",
-      },
-      // Add more property cards for the first set...
-    ],
-    [
-      {
-        currentIndex: 0,
-        images: [
+      propertyName: 'Eaglesvale Property',
+      propertyPrice: '$270,000',
+      propertyAddress: 'Harare',
+      propertyType: 'For Sale',
+    },
+    // Add more property cards for the first set...
+  ],
+  [
+    {
+      currentIndex: 0,
+      images: [
         './assets/images/houses/house1.jpg',
         './assets/images/houses/house2.jpg',
         './assets/images/houses/house3.jpg',
         './assets/images/houses/house4.jpg',
       ],
-        propertyName: 'Another Property',
-        propertyPrice: '$350,000',
-        propertyAddress: '123 Main Street',
-        propertyType: "For Sale",
-      },
-      
-    ],
-    [
-      {
-        currentIndex: 0,
-        images: [
+      propertyName: 'Mount Pleasant Estate',
+      propertyPrice: '$350,000',
+      propertyAddress: 'Bulawayo',
+      propertyType: 'For Rent',
+    },
+  ],
+  [
+    {
+      currentIndex: 0,
+      images: [
         './assets/images/houses/house1.jpg',
         './assets/images/houses/house2.jpg',
         './assets/images/houses/house3.jpg',
         './assets/images/houses/house4.jpg',
       ],
-        propertyName: 'Another Property',
-        propertyPrice: '$350,000',
-        propertyAddress: '123 Main Street',
-        propertyType: "For Sale",
-      },
-      
-    ],
+      propertyName: 'Victoria Falls Paradise',
+      propertyPrice: '$350,000',
+      propertyAddress: 'Victoria Falls',
+      propertyType: 'For Sale',
+    },
+  ],
 
-    [
-      {
-        currentIndex: 0,
-        images: [
-        './assets/images/houses/house1.jpg',
-        './assets/images/houses/house2.jpg',
-        './assets/images/houses/house3.jpg',
-        './assets/images/houses/house4.jpg',
-      ],
-        propertyName: 'Another Property',
-        propertyPrice: '$350,000',
-        propertyAddress: '123 Main Street',
-        propertyType: "For Sale",
-      },
-      
-    ],
+  // Add more arrays of property cards here with realistic names and addresses in Zimbabwe...
 
-    [
-      {
-        currentIndex: 0,
-        images: [
+  [
+    {
+      currentIndex: 0,
+      images: [
         './assets/images/houses/house1.jpg',
         './assets/images/houses/house2.jpg',
         './assets/images/houses/house3.jpg',
         './assets/images/houses/house4.jpg',
       ],
-        propertyName: 'Another Property',
-        propertyPrice: '$350,000',
-        propertyAddress: '123 Main Street',
-        propertyType: "For Sale",
-      },
-      
-    ],
+      propertyName: 'Gweru Greens',
+      propertyPrice: '$250,000',
+      propertyAddress: 'Gweru',
+      propertyType: 'For Rent',
+    },
+  ],
 
-    [
-      {
-        currentIndex: 0,
-        images: [
+  [
+    {
+      currentIndex: 0,
+      images: [
         './assets/images/houses/house1.jpg',
         './assets/images/houses/house2.jpg',
         './assets/images/houses/house3.jpg',
         './assets/images/houses/house4.jpg',
       ],
-        propertyName: 'Another Property',
-        propertyPrice: '$350,000',
-        propertyAddress: '123 Main Street',
-        propertyType: "For Sale",
-      },
-      
-    ],
+      propertyName: 'Nyanga Valley View',
+      propertyPrice: '$400,000',
+      propertyAddress: 'Nyanga',
+      propertyType: 'For Sale',
+    },
+  ],
 
-    [
-      {
-        currentIndex: 0,
-        images: [
+  [
+    {
+      currentIndex: 0,
+      images: [
         './assets/images/houses/house1.jpg',
         './assets/images/houses/house2.jpg',
         './assets/images/houses/house3.jpg',
         './assets/images/houses/house4.jpg',
       ],
-        propertyName: 'Another Property',
-        propertyPrice: '$350,000',
-        propertyAddress: '123 Main Street',
-        propertyType: "For Sale",
-      },
-      
-    ],
+      propertyName: 'Masvingo Meadows',
+      propertyPrice: '$320,000',
+      propertyAddress: 'Masvingo',
+      propertyType: 'For Rent',
+    },
+  ],
 
-    [
-      {
-        currentIndex: 0,
-        images: [
+  [
+    {
+      currentIndex: 0,
+      images: [
         './assets/images/houses/house1.jpg',
         './assets/images/houses/house2.jpg',
         './assets/images/houses/house3.jpg',
         './assets/images/houses/house4.jpg',
       ],
-        propertyName: 'Another Property',
-        propertyPrice: '$350,000',
-        propertyAddress: '123 Main Street',
-        propertyType: "For Sale",
-      },
-      
-    ],
-    
-  ];
+      propertyName: 'Kwekwe Estates',
+      propertyPrice: '$280,000',
+      propertyAddress: 'Kwekwe',
+      propertyType: 'For Sale',
+    },
+  ],
+
+  [
+    {
+      currentIndex: 0,
+      images: [
+        './assets/images/houses/house1.jpg',
+        './assets/images/houses/house2.jpg',
+        './assets/images/houses/house3.jpg',
+        './assets/images/houses/house4.jpg',
+      ],
+      propertyName: 'Chinhoyi Homes',
+      propertyPrice: '$290,000',
+      propertyAddress: 'Chinhoyi',
+      propertyType: 'For Rent',
+    },
+  ],
+];
+
 
   // places demo
   places = [
@@ -262,8 +258,8 @@ articles = [
 };
 
 
-
-  constructor(private titleService: Title){}
+  isLoggedIn: boolean = false;
+  constructor(private titleService: Title, private auth: AuthGuardService, private router: Router){}
   ngOnInit(){
     this.titleService.setTitle("Imalo | Home");
   setTimeout(() => {
@@ -283,7 +279,6 @@ articles = [
         card.images = this.shuffle(card.images);
       });
     });
-
   }
 
 nextImage(setIndex: number, cardIndex: number): void {

@@ -2,18 +2,18 @@
 
 <nav class="navbar ">
   <div class="navbar-brand">
-    <a class="navbar-item" href="#">
+    <a class="logo" href="#">
       <img src="./assets/images/logo.png" alt="Logo" width="112" height="28">
     </a>
 
     <div style="visibility: hidden">
-         <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
+         <a class="navbar-item is-hidden-desktop" href="#" target="_blank">
       <span class="icon" style="color: #333;">
         <i class="fa fa-github"></i>
       </span>
     </a>
 
-    <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
+    <a class="navbar-item is-hidden-desktop" href="https://twitter.com" target="_blank">
       <span class="icon" style="color: #55acee;">
         <i class="fa fa-twitter"></i>
       </span>
@@ -42,16 +42,16 @@
             <div class="columns">
               <div class="column">
                 <h1 class="title is-6 is-mega-menu-title" id="mega-title">For sale</h1>
-                <a class="navbar-item custom" href="/buy/sale/homes">
+                <a class="navbar-item custom" href="#">
                   Homes for sale
                 </a>
-                <a class="navbar-item custom" href="buy/sale/new-estates">
+                <a class="navbar-item custom" href="#">
                   New Estates
                 </a>
-                <a class="navbar-item custom" href="buy/underveloped-properties">
-                 Underdeveloped Properties
+                <a class="navbar-item custom" href="#">
+                 Landed Properties
                 </a>  
-                <a class="navbar-item custom" href="buy/underveloped-properties">
+                <a class="navbar-item custom" href="#">
                  All Listing
                 </a>
                 
@@ -69,15 +69,16 @@
                 <a class="navbar-item custom" href="download-app">
                   Imba Pano App
                 </a>
-                <a class="navbar-item custom" href="#">
+                <!-- <a class="navbar-item custom" href="affordability-calculator">
                   Affordability Calculator
-                </a>
+                </a> -->
               </div>
             
               
             </div>
           </div>
         </div>
+        
       </div>
 
       <div class="navbar-item has-dropdown is-hoverable is-mega">
@@ -103,15 +104,7 @@
                 </a>
               </div>
 
-              <div class="column">
-                
-                <a class="navbar-item custom" href="#">
-                  Lease
-                </a>
-                <a class="navbar-item custom" href="#">
-                 List a rental
-                </a>
-              </div>
+              
               <div class="column">
                 <h1 class="title is-6 is-mega-menu-title">Resources</h1>
                 <a class="navbar-item custom" href="#">
@@ -119,6 +112,12 @@
                 </a>
                 <a class="navbar-item custom" href="rental-guide">
                   Rental Guide
+                </a>
+                <a class="navbar-item custom" href="#">
+                  Lease
+                </a>
+                <a class="navbar-item custom" href="#">
+                 List a rental
                 </a>
               </div>
             
@@ -137,62 +136,73 @@
             <div class="columns">
               <div class="column">
                 
-                <a class="navbar-item " href="sellers-guide">
+                <!-- <a class="navbar-item " href="sellers-guide">
                   Sellers Guide
                 </a>
                 <a class="navbar-item " href="#">
                   Estimate Value
-                </a>
-                <a class="navbar-item " href="#">
+                </a> -->
+                <a class="navbar-item " href="post-a-sale">
                   Post a sale
                 </a>
-                <a class="navbar-item " href="#">
-                  Allocate Agent
-                </a>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-
-             <div class="navbar-item has-dropdown is-hoverable is-mega">
-        <div class="navbar-link flex">
-          Find Agent
-        </div>
-        <div id="blogDropdown" class="navbar-dropdown " data-style="width: 18rem;">
-          <div class="container">
-            <div class="columns">
-              <div class="column">
-                <a class="navbar-item " href="#">
-                 Real Estate
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-        
-      
-      <a class="navbar-item " href="help">
-       Help
-      </a>
-      <a class="navbar-item " href="premium-ads">
+      <a class="navbar-item " routerLink="premium-ads">
         Premium Ads
       </a>
     </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
+    <div class="navbar-end" style="positoin: relative">
+      <div class="navbar-item" *ngIf="!isLoggedIn">
         <div class="buttons">
-          <a class="button is-danger">
+          <a class="button is-danger" routerLink="login">
             <strong>Sign In</strong>
           </a>
-          <a class="button is-light">
+          <a class="button is-light" routerLink="register">
             Create Account
           </a>
         </div>
       </div>
+
+      <!-- user is logged in -->
+      <ng-container *ngIf="isLoggedIn">
+        <div class="auth-buttons">
+        <div class="navbar-item">
+        <!-- Submit Property button -->
+        <a class="button is-danger is-small" routerLink="post-a-sale">
+          Submit Property
+        </a>
+      </div>
+
+      <div class="navbar-item">
+        <!-- Profile picture and dropdown -->
+        <div class="dropdown is-right is-hoverable" >
+          <div class="dropdown-trigger">
+            <a aria-haspopup="true" class="button is-small is-primary profile-label" aria-controls="dropdown-menu">
+              <div>
+                <span class="profile-img-holder"><img [src]="profilePhoto" class="profile-img" alt="profile picture"></span>
+              </div>
+              <div>
+                <span>{{user.firstName}}</span>
+              </div>
+            </a>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a routerLink="my-account" class="dropdown-item">My Account</a>
+              <a href="#" class="dropdown-item">My Listings</a>
+              <a href="#" class="dropdown-item">My Payment</a>
+              <a href="javascript:void()" class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </ng-container>
     </div>
   </div>
 </nav>

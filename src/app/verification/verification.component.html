@@ -1,0 +1,16 @@
+<section class="padding">
+	<div class="container">
+	<div class="row d-flex justify-content-center align-items-center w-100">
+		<div class="col-md-6">
+			<div class="card">
+		        <div class="card-header">Registration successful</div>
+		        <div class="card-body">
+		        	<h4 *ngIf="user">Hello, {{ user.firstName }} {{ user.lastName }},</h4>
+		          <p>An email has been sent to <a href="#">{{ user?.email }}</a> for verification. Please check your email and follow the instructions to complete the verification process.</p>
+		          
+		        </div>
+		     </div>
+		</div>
+	</div>
+</div>
+</section>

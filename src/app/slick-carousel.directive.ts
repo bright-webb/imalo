@@ -39,3 +39,5 @@ export class SlickCarouselDirective implements AfterViewInit {
     $(this.el.nativeElement).slick('unslick');
   }
 }
+
+// DJX-271-35410.

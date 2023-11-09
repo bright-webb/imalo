@@ -1,0 +1,98 @@
+
+<div class="login-background">
+
+	<div class="container">
+		<div class="row d-flex justify-content-center align-items-center vh-100">
+	<div class="col-md-4" style="padding-top: 40px;">
+
+	<!--Tab -->
+	<div class="margin-top-5 margin-bottom-40" style="width: 100%; background: white; border-radius: 10px; padding: 20px; margin-top: 40px; margin-bottom: 40px">
+
+		<!--<ul class="tabs-nav">
+			<li class=""><a href="#tab1">Log In</a></li>
+			<li><a href="#tab2">Register</a></li>
+		</ul>-->
+
+		<div class="tabs-container alt">
+			<h4 class="text-center text-bold">Login Form</h4>
+			<p class="card-paragraph text-center">Hey, Enter your details to get signed in to your account</p>
+			<!-- Login -->
+				<div class="tab-content">
+					<form (ngSubmit)="onLogin()" [formGroup]="form">
+	
+						<p class="form-row form-row-wide">
+							<label for="username">
+								
+								<input type="email" class="input-text" formControlName="email"  id="username" value="" placeholder="Email" />
+							</label>
+						</p>
+	
+						<p class="form-row form-row-wide">
+							<label for="password">
+								
+								<input class="input-text" type="password" formControlName="password" name="password" id="password" placeholder="Password"/>
+							</label>
+						</p>
+	
+						<p class="form-row">
+							<button type="submit" class="signup-btn" [disabled]="isLoading">
+			                  {{ loginText }}
+			                  <span *ngIf="isLoading" class="loader show-loader"></span>
+			                </button>
+
+						</p>		
+					</form>
+					<p class="register-link">Don't have an account?&nbsp; <a routerLink="/register">Register here</a> </p>
+				</div>
+
+			<!-- Register -->
+			<!--<div class="tab-content" id="tab2" style="display: none;">
+
+				<form method="post" class="register">
+					
+				<p class="form-row form-row-wide">
+					<label for="username2">Username:
+						<i class="im im-icon-Male"></i>
+						<input type="text" class="input-text" name="username" id="username2" value="" />
+					</label>
+				</p>
+					
+				<p class="form-row form-row-wide">
+					<label for="email2">Email Address:
+						<i class="im im-icon-Mail"></i>
+						<input type="text" class="input-text" name="email" id="email2" value="" />
+					</label>
+				</p>
+
+				<p class="form-row form-row-wide">
+					<label for="password1">Password:
+						<i class="im im-icon-Lock-2"></i>
+						<input class="input-text" type="password" name="password1" id="password1"/>
+					</label>
+				</p>
+
+				<p class="form-row form-row-wide">
+					<label for="password2">Repeat Password:
+						<i class="im im-icon-Lock-2"></i>
+						<input class="input-text" type="password" name="password2" id="password2"/>
+					</label>
+				</p>
+
+				<p class="form-row">
+					<input type="submit" class="button border fw margin-top-10" name="register" value="Register" />
+				</p>
+
+				</form>
+			</div>-->
+
+		</div>
+	</div>
+
+
+
+
+	</div>
+	</div>
+	</div>
+
+</div>

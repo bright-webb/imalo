@@ -1,0 +1,45 @@
+.card-header{
+	padding: 20px;
+	box-shadow: none;
+	text-align: center !important;
+}
+
+.signup-btn{
+  width: 100%;
+  background: #c84f45;
+  color: #fff;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+button.signup-btn{
+  position: relative !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.loader {
+  border: 4px solid #f3f3f3; 
+  border-top: 4px solid #c84f45; // primary color
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  display: none; 
+  position: absolute;
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.show-loader {
+  display: block;
+}

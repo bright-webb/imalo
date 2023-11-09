@@ -1,0 +1,227 @@
+<section class="padding">
+
+<div class="container">
+    <form [formGroup]="propertyForm" class="row d-flex justify-content-center" (ngSubmit)="onSubmit()">
+    	
+        <!-- Submit Page -->
+        <div class="col-md-8">
+        	<div class="sale-property-section">
+    			<h4 class="text-bold">Sell or Rent your property</h4>
+    			<p>Everything you need to sell and rent your property. We are here to help you every step of the way</p>
+    		</div>
+            <div class="sale-property-page">
+            	
+
+		<!-- Section -->
+		<h3>Basic Information</h3>
+                <div class="submit-section">
+
+                    <!-- Title -->
+                    <div class="form">
+                        <h5>Property Title</h5>
+                        <input class="search-field" type="text" formControlName="propertyTitle">
+                    </div>
+
+                    <!-- Row -->
+                    <div class="row with-forms">
+
+                        <!-- Status -->
+                        <div class="col-md-6">
+                            <h5>Property Request</h5>
+                            <select formControlName="propertyRequest">
+                                <option label="blank"></option>
+                                <option>Sell</option>
+                                <option>Rent</option>
+                                <option>Lease</option>
+                            </select>
+                        </div>
+
+                        <!-- Type -->
+                        <div class="col-md-6">
+                            <h5>Property Category</h5>
+                            <select formControlName="propertyCategory">
+                                <option label="blank"></option>
+                                <option>Land</option>
+                                <option>Store</option>
+                                <option>Office</option>
+                                <option>Warehouse</option>
+                                <option>Hostel</option>
+                                <option>Serviced Apartment</option>
+                                <option>Flat</option>
+                                <option>Duplex</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <!-- Row / End -->
+
+
+                    <!-- Row -->
+                    <div class="row with-forms">
+
+                        <!-- Price -->
+                        <div class="col-md-4">
+                            <h5>Price</h5>
+                            <div class="select-input disabled-first-option">
+                                <input type="text" data-unit="USD" formControlName="price">
+                            </div>
+                        </div>
+
+                        <!-- Property Square Metre -->
+                        <div class="col-md-4">
+                            <h5>Property Square Metre</h5>
+                            <div class="select-input disabled-first-option">
+                                <input type="text" data-unit="Sq Ft" formControlName="propertySquareMetre">
+                            </div>
+                        </div>
+
+                        <!-- Distress Deal -->
+                        <div class="col-md-4">
+                            <h5>Distress Deal</h5>
+                            <select formControlName="distressDeal">
+                                <option label="blank"></option>
+                                <option>No</option>
+                                <option>Yes</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <!-- Row / End -->
+
+                    <!-- Features -->
+                    <h5 class="margin-top-30">Features</h5>
+                    <div class="checkboxes in-row margin-bottom-20">
+                        <input id="check-1" type="checkbox" name="check" formControlName="easyAccessRoad">
+                        <label for="check-1">Easy access Road</label>
+
+                        <input id="check-2" type="checkbox" name="check" formControlName="tarredRoad">
+                        <label for="check-2">Tarred Road</label>
+
+                        <input id="check-3" type="checkbox" name="check" formControlName="tightSecurity">
+                        <label for="check-3">Tight Security</label>
+
+                        <input id="check-4" type="checkbox" name="check" formControlName="cctv">
+                        <label for="check-4">CCTV</label>
+
+                        <input id="check-5" type="checkbox" name="check" formControlName="constantPowerSupply">
+                        <label for="check-5">Constant Power Supply</label>
+
+                        <input id="check-6" type="checkbox" name="check" formControlName="roomsEnSuite">
+                        <label for="check-6">Rooms en-suite</label>
+
+                        <input id="check-7" type="checkbox" name="check" formControlName="popCeilings">
+                        <label for="check-7">POP ceilings</label>
+
+                        <input id="check-8" type="checkbox" name="check" formControlName="swimmingPool">
+                        <label for="check-8">Swimming pool</label>
+
+                        <input id="check-9" type="checkbox" name="check" formControlName="largeLivingRoom">
+                        <label for="check-9">Large Living Room</label>
+
+                        <input id="check-10" type="checkbox" name="check" formControlName="spaciousRooms">
+                        <label for="check-10">Spacious Rooms</label>
+
+                        <input id="check-11" type="checkbox" name="check" formControlName="wellDesignedKitchen">
+                        <label for="check-11">Well Designed and Fitted Kitchen</label>
+
+                        <input id="check-12" type="checkbox" name="check" formControlName="enoughParkingSpace">
+                        <label for="check-12">Enough Parking Space</label>
+
+                        <input id="check-13" type="checkbox" name="check" formControlName="wardrobe">
+                        <label for="check-13">Wardrobe</label>
+
+                        <input id="check-14" type="checkbox" name="check" formControlName="interLockedCompound">
+                        <label for="check-14">Inter-Locked Compound</label>
+
+                        <input id="check-15" type="checkbox" name="check" formControlName="sereneEnvironment">
+                        <label for="check-15">Serene Environment</label>
+
+                        <input id="check-16" type="checkbox" name="check" formControlName="waterHeater">
+                        <label for="check-16">Water Heater</label>
+
+                        <input id="check-17" type="checkbox" name="check" formControlName="others">
+                        <label for="check-17">Others</label>
+                    </div>
+                    <!-- Checkboxes / End -->
+
+                    <!-- Property Description -->
+                    <div class="form">
+                        <h5>Property Description</h5>
+                        <textarea class="WYSIWYG" name="summary" cols="40" rows="3" id="summary" spellcheck="true" formControlName="propertyDescription"></textarea>
+                    </div>
+
+                </div>
+                <!-- Section / End -->
+
+                <!-- <h3>Gallery</h3>
+                <div class="submit-section">
+                    <div class="dropzone" appDropzone ></div>
+                </div> -->
+                <!-- Section -->
+                <h3>Location</h3>
+                <div class="submit-section">
+
+                    <!-- Row -->
+                    <div class="row with-forms">
+
+                        <!-- Province -->
+                        <div class="col-md-12">
+                            <h5>Google Map</h5>
+                            <input #search type="text" placeholder="Search for location" />
+
+                        <google-map id="map" height="500px"
+  width="100%"
+  [zoom]="zoom"
+  [center]="center"
+  [options]="options">
+                            
+                        </google-map>
+                        </div>
+
+
+                        <!-- Area -->
+
+                    
+
+                        <!-- Closest Landmark -->
+                        <div class="col-md-6">
+                            <h5>Closest Landmark</h5>
+                            <input type="text" formControlName="closestLandmark">
+                        </div>
+
+                        <!-- Address -->
+                        <div class="col-md-6">
+                            <h5>Address</h5>
+                            <input type="text" formControlName="address">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="col-md-6">
+                            <h5>Phone Number</h5>
+                            <input type="text" formControlName="phoneNumber">
+                        </div>
+
+                        <!-- Alternative Phone Number -->
+                        <div class="col-md-6">
+                            <h5>Alternative Phone Number</h5>
+                            <input type="text" formControlName="alternativePhoneNumber">
+                        </div>
+
+                    </div>
+                    <!-- Row / End -->
+
+                </div>
+                <!-- Section / End -->
+
+                <div class="divider"></div>
+                <button type="submit" class="button preview margin-top-5 loading-btn" [disabled]="isLoading">{{ buttonText }} 
+                  
+                  <span *ngIf="isLoading" class="loader show-loader"></span>
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+</section>

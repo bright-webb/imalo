@@ -1,0 +1,95 @@
+<section class="padding loading">
+	<div class="container">
+		<div *ngIf="isLoading; else contentToShow" class="loader-container">
+		  <div class="spinner"></div>
+		</div>
+
+		<ng-template #contentToShow>
+		<div *ngIf="!showError">
+		  <div id="titlebar" class="property-titlebar margin-bottom-0">
+		    <div class="container">
+		      <div class="row">
+		        	<div class="col-md-12">
+				
+					
+					<div class="property-title">
+						<h2>{{propertyData.property_title}}<span class="property-badge">{{propertyData.property_request}}</span></h2>
+						<span>
+							<a href="#location" class="listing-address">
+								<i class="fa fa-map-marker"></i>
+								{{propertyData.address}}
+							</a>
+						</span>
+					</div>
+
+					<div class="property-pricing">
+						<div class="property-price">{{ propertyData.price | currency: 'USD' }}
+						</div>
+						<div class="sub-price">${{propertyData.property_square_metre}} / sq ft</div>
+					</div>
+
+
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		  <!-- image carousel -->
+		  <div class="carousel-slider" appSlider>
+		    <ng-container *ngFor="let image of propertyImages">
+		        <img [src]="image.image_path" class="item mfp-gallery" />
+		    </ng-container>
+		</div>
+
+		<!-- other property details -->
+		<div class="container">
+	<div class="row">
+
+		<!-- Property Description -->
+		<div class="col-lg-8 col-md-7">
+			<div class="property-description">
+
+				<!-- Main Features -->
+				<ul class="property-main-features">
+					<li>Area <span>{{propertyData.property_square_metre}} sq ft</span></li>
+				</ul>
+
+
+				<!-- Description -->
+				<h3 class="desc-headline">Description</h3>
+				
+
+					<p>
+						{{propertyData.property_description}}
+					</p>
+
+
+
+				<!-- Details -->
+				<h3 class="desc-headline">Details</h3>
+				<ul class="property-features margin-top-0">
+					<li>Distress Deal: <span>{{propertyData.distress_deal}}</span></li>
+					<li>Category: <span>{{propertyData.property_category}}</span></li>
+					<li>Request: <span>{{propertyData.property_request}}</span></li>
+				</ul>
+
+
+				<!-- Features -->
+				<h3 class="desc-headline">Features</h3>
+				<ul class="property-features checkboxes margin-top-0">
+					  <li *ngFor="let feature of propertyFeatures">{{ feature }}</li>
+				</ul>
+				
+			</div>
+			<a routerLink="/account/properties" class="btn btn-danger btn-md mt-5 w-100">Finish</a>
+		</div>
+
+		<!-- Property Description / End -->
+	</div>
+</div>
+
+		</div>
+		</ng-template>
+	</div>
+</section>
+<br><br><br>
