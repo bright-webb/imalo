@@ -1,0 +1,14 @@
+.ui.small.stackable.menu{
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.logo{
+    position: relative !important;
+    right: 10px;
+
+    img{
+        position: absolute !important;
+        width: 100px !important;
+    }
+}
